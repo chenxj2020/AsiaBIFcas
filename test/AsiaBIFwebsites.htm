@@ -1,0 +1,626 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>data explore</title>
+	<link rel="stylesheet" type="text/css" href="../media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../media/Buttons-1.6.1/css/buttons.dataTables.min.css">
+	<style type="text/css" class="init">
+	
+	</style> 
+	<script type="text/javascript" language="javascript" src="../media/jQuery-3.3.1/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/mainjscss/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/Buttons-1.6.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/Buttons-1.6.1/js/buttons.flash.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/JSZip-2.5.0/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/pdfmake-0.1.36/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/pdfmake-0.1.36/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/Buttons-1.6.1/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" language="javascript" src="../media/Buttons-1.6.1/js/buttons.print.min.js"></script>
+	<script type="text/javascript" class="init">
+	
+
+
+$(document).ready(function() {
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			//'copy', 'csv', 'excel', 'pdf', 'print'
+			{
+       extend: 'copy'
+   },
+   {
+       extend: 'csv'
+   },
+   {
+       extend: 'excel',
+       title: '导出Excel文件',
+	   sButtonText: "Add"
+   },
+   {
+       extend: 'pdf',
+       title: 'PDFFile'
+   },
+
+   {
+       extend: 'print',
+       customize: function(win) {
+           $(win.document.body).addClass('white-bg');
+           $(win.document.body).css('font-size', '10px');
+           $(win.document.body).find('table').addClass('compact').css('font-size', 'inherit');
+       }
+}
+		]
+	} );
+} );
+
+
+
+	</script>
+</head>
+<body class="wide comments example">
+ 
+	<div class="fw-container">
+ 
+ 
+		<div class="fw-body">
+			<div class="content">
+				<h1 class="page_title">Search resources</h1>
+				 
+				<table id="example" class="display" style="width:100%">
+					<thead>
+						<tr>
+							<th>Country/Area</th>
+							<th>title</th>
+							<th>Type</th>
+							<th>Keywords</th>
+						</tr>
+					</thead>
+					<tbody>
+<tr><td>Asia</td><td><a target="_blank"  href="http://www.asianflora.com/">Asian Flora</a></td><td>individual</td><td>Flora, personal blog</td></tr>
+<tr><td>Armenia</td><td><a target="_blank"  href="http://www.minenergy.am/en/">RA Minister of Energy and Natural Resources </a></td><td>government department</td><td></td></tr>
+<tr><td>Armenia</td><td><a target="_blank"  href="http://www.mnp.am">Ministry of Nature Protection </a></td><td>government department</td><td></td></tr>
+<tr><td>Azerbaijan</td><td><a target="_blank"  href="http://www.eco.gov.az/en/">Ministry of Ecology and Natural Resources</a></td><td>government department</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://bforest.gov.bd/">Bangladesh Forest Department, Ministry of Environment and Forest Government of Bangladesh</a></td><td>government department</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bangladesh.gov.bd/">National Web Portal of Bangladesh</a></td><td>government department</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.banglajol.info/index.php/BJB">Bangladesh Journal of Botany </a></td><td>Journal</td><td>plant</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.banglajol.info/index.php/BJPT">Bangladesh Journal of Plant Taxonomy</a></td><td>Journal</td><td>plant</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.banglajol.info/index.php/BJZ">Bangladesh Journal of Zoology</a></td><td>Journal</td><td>animal</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.banglapedia.org/english/catagory/catagory.htm">Banglapedia - the National Encyclopedia of Bangladesh</a></td><td></td><td>biodiversity</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.barc.gov.bd/home.php">Bangladesh Agricultural Research Council (BARC)</a></td><td>institutional website</td><td>agricultural</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bari.gov.bd/">Bangladesh Agricultural Research Institute (BARI)</a></td><td>institutional website</td><td>agricultural</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bas.org.bd/">Bangladesh Academy of Sciences (BAS)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bfidc.info/index.htm">Bangladesh Forest Industries Development Corporation (BFIDC)</a></td><td>institutional website</td><td>forest</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bfri.gov.bd/index.html">The Bangladesh Forest Research Institute (BFRI)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bjri.gov.bd/bjri_english/">Bangladesh Jute Research Institute (BJRI)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bnh.gov.bd/">Bangladesh National Herbarium (BNH)</a></td><td>herbarium</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.brri.gov.bd/">Bangladesh Rice Research Institute (BRRI)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.bsri.gov.bd/">Bangladesh Sugarcane Research Institute (BSRI)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.cdb.gov.bd/">Cotton Development Board (CDB)</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.discoverybangladesh.com/meetbangladesh/plant_animal_life.html">Discovery Bangladesh</a></td><td></td><td></td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.du.ac.bd/department/biological_sciences/index.php">Faculty of Biological Sciences, University of Dhaka</a></td><td></td><td>institutional website</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.iucn.org/Bangladesh">IUCN Bangladesh</a></td><td>NGO</td><td>red list</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.iucnredlistbd.org/">Red List of Bangladesh</a></td><td>all</td><td>red list</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.moef.gov.bd/index.php">The Ministry of Environment & Forests</a></td><td>government department</td><td>institutional website</td></tr>
+<tr><td>Bangladesh</td><td><a target="_blank"  href="http://www.ru.ac.bd/zoo/zoology.htm">Department of Zoology, Rajshahi University</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Brunei</td><td><a target="_blank"  href="http://www.bruneichm.gov.bn/">Brunei Darussalam Clearing-House Mechanism</a></td><td>governmental</td><td>CHM</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://159.226.249.4/page/showEntity.vpage?uri=PIDBPUB.coldInjury">植物引种与保育数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://159.226.74.2/wxdata/index.asp">古生物学文献数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://202.119.210.17/tpi_1/sysasp/include/index.asp">园林植物特色数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://210.45.192.232/">安徽省生物标本资源数字化公共服务平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://218.62.43.198/tpi/WebSearch_DZJW/Index.aspx">长白山动植菌物图片数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://bioinvasion.fio.org.cn/">中国外来海洋生物物种基础信息数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://birds.chinare.org.cn/index/">极地标本资源共享平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://cbis.xtbg.ac.cn/Herbarium.aspx">版纳植物园标本信息系统</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://data.desert-oasis.cn/manager/sjk_zw.php?id=254">中科院新疆生态与地理研究所—动植物数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://data2.xjlas.ac.cn:81/category_117/index.aspx">乌鲁木齐市生物多样性数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://db.kib.ac.cn/eflora/Default.aspx">中国植物物种信息数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://flora.gxib.cn/">广西植物资源信息共享平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://frps.eflora.cn/">中国在线植物志</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://fungi.hnsci.net/">中国水生菌物数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://gxsti01.vicp.net/Home/DataBase">中—泰药用植物专业数据库</a></td><td>打不开</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://icgr.caas.net.cn/">中国作物种质信息网</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://icgr.caas.net.cn/pt/">国家植物种质资源共享平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://http://www.ipbeschina.org">IPBES Chinese National Focal Point</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://kun.kib.ac.cn/">中科院昆明植物所标本馆</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://mdata.ivpp.ac.cn:8080/special/query.jsp">古脊椎动物唔种数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://mnh.scu.edu.cn/">教学标本标准化整理整合与资源共享平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://monkey.ioz.ac.cn/bwg-cciced/english/cesis/invasive.htm"> Introduction to Invasive Species In China </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://niaolei.org.cn/">鸟类网</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://old.wwfchina.org/birdgallery/">中国鸟类图片库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://paxing.sppchina.com/index.html">中国爬行动物</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://pbl.csdb.cn:8080/index.jsp">植物DNA条形码数据管理系统</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://scsagr.scsfri.ac.cn/">南海海洋生物种质资源数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://sdb.im.ac.cn/chinese/chinese.html">中国微生物信息网络</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://sdb.llas.ac.cn/qt_db/animal_search.html">青藏高原动物数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://sp2000.org.cn">Species 2000中国节点</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://stcmchina.com/zybbg/">Guizhou Medical University</a></td><td>Herbarium</td><td>Medinical plants of China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://sts.mep.gov.cn/zrbhq/zrbhq/">全国自然保护区名录——国家环保部</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://swx.hstc.edu.cn/">Hanshan Normal University</a></td><td>Herbarium</td><td>Mainly vascular plants of East Guangdong; Mainly naturalized plants and invasive plants of South China; Some of North Guangdong, Hainan, Fujian, Jiangxi, Hubei</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://vegetation.ibcas.ac.cn/">植被和物种资源信息共享</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.afcd.gov.hk/tc_chi/conservation/hkbiodiversity/database/search.asp">香港生物数据库—香港农业自然护理署</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.agridata.cn/">国家农业科学数据共享中心</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.amphibiachina.org">Amphibia China</a></td><td>Amphibia</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.bhl-china.org">BHL（生物多样性图书馆）中国节点</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.biodiv.gov.cn/">Biodiversity Clearing-House Mechanism of China</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.biodiversity-science.net">Biodiversity Science</a></td><td></td><td>Journal</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.biogrid.cn/home">中科院生命科学数据网格</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.bioinvasion.org.cn:9090/xu716/index.jsp">China Invasive Species Network </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.birdnet.cn/portal.php">Bird Net</a></td><td>Aves</td><td>NGO</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cazg.org.cn/">中国动物园协会</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cdad-is.org.cn/">家养动物种质资源平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cepb.gov.cn/ecbp/index.asp">重庆市物种资源基础数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cfbiodiv.org/">中国森林生物多样性监测网络（CForBio）  </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cfh.ac.cn">中国自然标本馆</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cfh.ac.cn/Subsite/Default.aspx?siteid=beijingplants&AspxAutoDetectCookieSupport=1">Flora of Beijing </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.chinabiodiversity.com/shwdyx/ruq/ruq-index-en.htm"> Alien Invasive Species in China </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.chinaias.cn/wjPart/index.aspx">中国外来入侵种数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cib.ac.cn/">Chengdu Institute of Biology, Chinese Academy of Science</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cnbird.org.cn/">中国野鸟图库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cnern.org/web/index.aspx">国家生态系统观测研究网络</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cvbg.cn/">中国数字植物园</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cvh.org.cn">中国数字植物标本馆</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.ecosystem.csdb.cn">中国生态系统与生态功能区划数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.emgene.csdb.cn/">能源微生物功能基因组专业数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.eolchina.org/">EOL中国节点</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.etaxonomy.ac.cn/">中国高等植物信息系统管理</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.fjforestry.gov.cn:10000/zxwz/zwbfxt/sjqf/sjcx.aspx">福建省林业厅 福建省国家级和省级重点保护植物</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.flph.org/index">泛喜马拉雅植物志</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.forestdata.cn/">林业科学数据中心</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.forestry.gov.cn/">STATE FORESTRY ADMINISTRATION,PRC</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.gbifchina.org/">CAS Node of Global Biodiversity Information Facility (GBIF-CAS)</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.genobank.org/">中国西南野生生物种质资源库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.ib.ac.cn">Institute of Batany, CAS</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.ibsfu.fudan.edu.cn">Institute of Biodiversity Science, Fudan University</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.ibsfu.fudan.edu.cn/database/shdb/shsd.htm">上海地区湿地生物多样性数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.insect-fans.com/bbs/forum.php ">中国昆虫爱好者</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.jlau.edu.cn/index_2017.asp">Jilin Agricultural University</a></td><td>Herbarium Mycology of Jilin Agricultural University</td><td>Vascular plants of Northeastern China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.lib.ctgu.edu.cn/database/tgpzw/index.htm">三峡地区珍稀濒危特有植物研究专题数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.lknet.ac.cn/">国家林业信息网</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.mccc.org.cn/">中国海洋微生物菌种保藏管理中心</a></td><td></td><td>Microbiology</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.mdc.org.cn/Default.aspx?tabid=36&language=zh-CN">青岛海洋科学数据共享平台</a></td><td></td><td>Ocean </td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.micro.csdb.cn/index.html">中国微生物与病毒主题数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.mlr.gov.cn/">Ministry of Land and Resources of PRC</a></td><td>government department</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.moa.gov.cn/">Ministry of Agriculture of PRC</a></td><td>government department</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.nimrf.net.cn/index.action">国家岩矿化石标本资源信息网</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.njau.edu.cn/"> Exotic Plants Information System of China </a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.nwipb.cas.cn/kxcb/kxsjk/201010/t20101031_3000422.html">青藏高原生物数据库—中科院西北高原所</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.nzmc.org/">国家动物博物馆</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.ocdb.csdb.cn/">南海海洋科学数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.omics.csdb.cn/">系统生物学中多组学综合数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.paleontology.csdb.cn/">中国古生物学专业数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.papc.cn/">中国自然保护区标本资源共享平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.plant.csdb.cn">中国植物主题数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.plantphoto.cn">中国植物图像库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.plantpic.csdb.cn/">植物园主题数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.plantsystematics.com/index_cn.asp">植物分类学报</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.qinghailake.csdb.cn/">中科院青海湖联合科研基地基础数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.scpri.ac.cn/html/modules/client/index.php">四川省植物资源信息网</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.scpsrc.ac.cn">Shanghai Chenshan Botanical Garden</a></td><td>Shanghai Chenshan Herbarium</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.sichuanabe.com/VegetationPool.asp">植物资源数据库—四川省植物工程研究院</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.soa.gov.cn/">State oceanic administration</a></td><td>Goveronmental</td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.soil.csdb.cn/">中国土壤数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.swanimal.csdb.cn/">中国西南地区动物资源数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.tbotany.csdb.cn/">热带亚热带植物基础数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.viruses.nsdc.cn/">中国病毒资源基础数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.wdcm.org/">WFCC-MIRCEN World Data Centre for Microorganisms (WDCM)</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.yimm.com.cn/news8/default.asp">云南重要中药资源信息系统</a></td><td>Database</td><td>plant</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.yimm.com.cn/ResourceDatabase.asp">云南省药物研究所—资源数据库</a></td><td></td><td></td></tr>
+<tr><td></td><td><a target="_blank"  href="http://http://www.yimm.com.cn/news7/list_b.asp?b_id=15">Yunan Natural Drug Resource Information Database</a></td><td>Database</td><td>plant</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.zfish.cn/">国家斑马鱼资源中心</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.zoology.csdb.cn/">中国动物主题数据库</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://yxy.bzvtc.com">Bozhou Vocational and Technical College</a></td><td>Herbarium</td><td>Plants of AnHui Province</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://zrzy.sxinfo.net/">山西自然科技资源平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://zzzy.fishinfo.cn/">国家水产种质资源平台</a></td><td></td><td></td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.lpssy.edu.cn">Liupanshui Normal University</a></td><td>Herbarium</td><td>Plants  of Guizhou province,China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://biolab.ecnu.edu.cn/sites/bhm/">East China Normal University</a></td><td>Biological History Museum</td><td>Bryophytes and vascular plants of China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://bjfc.bjfu.edu.cn/zy/">Beijing Forestry University</a></td><td>Museum</td><td>The main collections of BJFC include specimens of rare and endangered wild fauna and flora from forests, wetlands and desert ecosystems, i.e. vascular plant, insets, animals, wood, fungi, soils and rocks. BJFC has got  a collection of about 200,000 plant,110,000 insects, 2,000 fungi, 10,000 wood, and 400 soil & rocks specimens.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://cmsmag.shnu.edu.cn/bryophyte">Shanghai Normal University</a></td><td>Bryophyte Herbarium</td><td>Bryophytes of China, mainly collected from the Yangtze River Delta and its neighboring regions.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://dc.iga.ac.cn/platform/veglib/">Northeast Institute of Geography and Agroecology, Chinese Academy of Sciences</a></td><td>Wetland Herbarium</td><td>Wetland plants in Northeastern China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://gwjnr.forestry.gov.cn/">Gaowangjie National Nature Reserve</a></td><td>Herbarium</td><td>Vascular plants in Gaowangjie National Nature Reserve</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://lab.taru.edu.cn/">Tarim University</a></td><td>Herbarium Mycologicum Universitatis Tarimensis</td><td>Desert fungi of Xinjiang, China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://life.scau.edu.cn/index.asp">South China Agricultural University</a></td><td></td><td>Vascular plants of South China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://pe.ibcas.ac.cn/">Institute of Botany, Chinese Academy of Sciences</a></td><td>Chinese National Herbarium</td><td>Worldwide vascular plants, mosses,and fossils, especially China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://shxy.wzu.edu.cn">Wenzhou university</a></td><td>Herbarium</td><td>Mainly vascular plants of South Zhejiang -- naturalized  and invasive species.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://sky.qfnu.edu.cn/"> Qufu Normal University</a></td><td>Herbarium</td><td>Vascular plants of Shandong</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://swx.tynu.edu.cn/">Taiyuan Normal University</a></td><td>Herbarium</td><td>Plant specimens in Shanxi province and its adjacent areas</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://syhuherbarium.sls.cuhk.edu.hk/">The Chinese University of Hong Kong</a></td><td>Shiu-Ying Hu Herbarium</td><td>China, especially Hong Kong.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.bnhm.org.cn">Beijing Natural History Museum</a></td><td>Herbarium</td><td>Vascular plants of Hebei, Shanxi, and Xinjiang; algae and fungi of Hebei.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.cqnu.edu.cn/">Chongqing Normal University</a></td><td>Biological Herbarium III</td><td>Bryophytes, pteridophytes and vascular plants of southwestern China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.egi.cas.cn/jgsz/zcbm/bbg/">Xinjiang Institute of Ecology and Geography, Chinese Academy of Sciences</a></td><td>Herbarium</td><td>Xinjiang Province, especially Altai and Tianshan Mountains and Xinjiang Desert.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.fgr.cn">International Centre for Bamboo and Rattan</a></td><td>Herbarium</td><td>Specimens of bamboo and rattan.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.gzucm.edu.cn">Guangzhou University of Chinese Medicine</a></td><td>Herbarium</td><td>Most  plant groups except fungi in southern China, lichens, algae, bryophytes and pteridophytes of southern China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.herbarium.gov.hk/">Agriculture, Fisheries, and Conservation Department</a></td><td>Hong Kong Herbarium</td><td>Hong Kong and surrounding areas.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.hnust.edu.cn">Hunan University of Science and Technology</a></td><td>Herbarium</td><td>All plant groups of China except lichens and algae; fungi, bryophytes, and pteridophytes of central and southern China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.jgsu.edu.cn/">Jinggangshan University</a></td><td>Herbarium</td><td>Plants  of the Jiangxi province,China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.jlidc.org.cn/">Jilin Institute for Drug Control</a></td><td>Herbarium</td><td>Medicinal plants of China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.jpkc.zync.edu.cn/mtst/">Zunyi Normal College</a></td><td>Herbarium</td><td>Vascular plants, pteridophytes and bryophytes.  Most specimens are collected in the northern Guizhou, especially in the natural reserves, such as Kuankuoshui (nation-level), Xishui (nation-level), Chishui (nation-level), Dashahe (province-level), Fuyan (county-level), Jiudaoshui (county-level), Baimaishui (county-level) and Baiqing (county-level). ZY contains the holotype of Didissandra chishuiense R. B. Zhang</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.kfbg.org.hk/">Kadoorie Farm and Botanic Garden</a></td><td>Herbarium</td><td>Ferns, orchids, sedges and trees of Hong Kong and South China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.kun.ac.cn">Kunming Institute of Botany, Chinese Academy of Sciences</a></td><td>Herbarium</td><td>All groups except algae from China, especially Yunnan, Sichuan, Guizhou, and Tibet; some seed plants from southeastern Asia, America, and Europe.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.nature-museum.net/Subsite/Default.aspx?siteid=HX">West China Subalpine Botanical Garden</a></td><td>Herbarium</td><td>Plants of Sichuan with emphasis on subalpine plants and and Ericaceae.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.sdfgr.cn/">Sandong Forest Germplasm Resources Center</a></td><td>Herbarium</td><td> Woody plants of Shandong Province</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.sgmtu.edu.cn">Qiannan Normal University for Nationalities</a></td><td>Herbarium</td><td>Plants  of the Guizhou province,China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.shmu.edu.cn">Shanghai Medical University</a></td><td>Medicinal Herbarium</td><td>Mainly Zhejiang and Jiangsu medicinal plants.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.sinicaorchid.org">The National Orchid Conservation Center</a></td><td>Herbarium</td><td>All Orchids worldwide with the second strength in China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.sxsmicro.com/index.asp">Shaanxi Institute of Microbiology</a></td><td>Herbarium</td><td>All macrofungi groups of China, especially of Tsinling Mountains.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.szbg.org">Fairy Lake Botanical Garden</a></td><td>Herbarium</td><td>Vascular plants and bryophytes , mainly from Southern China and southeast Asia.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.tricaas.com/Expert/chenliang/">Tea Research Institute, Chinese Academy of Agricultural Sciences</a></td><td>Tea Herbarium</td><td>Wild and cultivated varieties of tea in China.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www.xiamenbg.com/">Xiamen Botanical Garden</a></td><td>Herbarium</td><td>Plants and fungi of China</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://www1.ynmtcm.com/index.html">Yunnan University of Traditional Chinese Medicine and Ethnomedicine</a></td><td>Herbarium</td><td>Medicinal plants of Yunnan</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.afcd.gov.hk/tc_chi/conservation/hkbiodiversity/database/search.asp">Hong Kong biodiversity database, Agriculture, Fisheries and Conservation Department</a></td><td></td><td> Agriculture, Fisheries</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.cahk.org.hk/">The Conservancy Association</a></td><td>NGO</td><td></td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.fungaldiversity.org">The Hong Kong University Herbarium</a></td><td></td><td>plant</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.hkflora.com/">Hong Kong Flora and Vegetation</a></td><td></td><td>plant</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.hkherbarium.net/Herbarium/S_frame.htm">Hong Kong Herbarium</a></td><td>Herbarium</td><td>plant</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.lcsd.gov.hk/LEISURE/LP/hkzbg/">Hong Kong Zoological and Botanical Gardens</a></td><td></td><td></td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://library.hkbu.edu.hk/electronic/libdbs/mpd/">药用植物图像数据库（香港浸会大学 中医药学院）</a></td><td></td><td>plant, data</td></tr>
+<tr><td>Chinese HK</td><td><a target="_blank"  href="http://www.oceanpark.com.hk/">Ocean Park Hong Kong</a></td><td>park</td><td>ocean life</td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://fishdb.sinica.edu.tw/">The fish database of Taiwan</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://freebsd.tspes.tpc.edu.tw/~afu/"> Insects of Taiwan </a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://tai2.ntu.edu.tw/index.php">Plants of Taiwan</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://taibnet.sinica.edu.tw/home.php?">Catalogue of Life in Taiwan</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://tropics.nu/">Flora and Fauna of Tropical Asia</a></td><td>plant, animal</td><td>personal blog</td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.firdi.org.tw">Bioresource Collection and Research Center (BCRC)</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.swan.org.tw/eng/index.htm">The Society for Wildlife and Nature (SWAN) International</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.taibif.tw">Taiwan Biodiversity Information Facility (TaiBIF)</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.teldap.tw">Taiwan e-Learning and Digital Archives Program (TELDAP)</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.tfri.gov.tw/">Taiwan Forestry Research Institute</a></td><td></td><td></td></tr>
+<tr><td>Chinese Taiwan</td><td><a target="_blank"  href="http://www.zoo.gov.tw/">Taipei Zoo</a></td><td></td><td></td></tr>
+<tr><td>Cyprus</td><td><a target="_blank"  href="http://www.moa.gov.cy/moa/agriculture.nsf/index_en/index_en?OpenDocument">Ministry of Agriculture, Natural Resources and Environment - Cyprus</a></td><td>government department</td><td></td></tr>
+<tr><td>East Timor</td><td><a target="_blank"  href="http://gov.east-timor.org/MAFF/">Ministry of Agriculture, Forestry and Fisheries </a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://aripune.org/">Agharkar Research Institute (ARI), India</a></td><td>institute website</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://avis.indianbiodiversity.org/">Avian Information System - Indian BioDiversity Information System ( AVIS-IBIS)</a></td><td>Bird</td><td>data</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://bionet.awardspace.info/">VA 's Bioinformatics</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://cmscollege.ac.in">Christian Missionary Society College</a></td><td>Herbarium</td><td>Plants of the Kerala region.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://envfor.nic.in/envis/envis.html">National Clearing-House Mechanism - India</a></td><td></td><td>CHM</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://envis.frlht.org/digital-herbarium-main.php">FRLH- Herbarium and Raw Drug Repository</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://fes.org.in/">Foundation for Ecological Security</a></td><td>NGO</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://friendsofsnakes.org.in/">Friends of Snakes Society</a></td><td>NGO</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://https//www.facebook.com/BhavansNatureAndAdventureCentre">Bhavans Nature And Adventure Centre</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://https://sites.google.com/site/efloraofindia/home">eflora of India (eFI)</a></td><td>Flora</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://ifp.plantnet-project.org/,">French Institute, French Ministry of Foreign Affairs</a></td><td>Herbarium</td><td>Evergreen-forest species of Western Ghats and Sri Lanka; shoals and savannas of Nilgiri and Palni hills and Sri Lanka; mangroves of India, Sri Lanka, Thailand, and Indonesia; Arecaceae; pollen of tropical angiosperms.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://india.gov.in/">National Portal of India</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://sfr-india.org.in/">School of Fundamental Research</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.anetindia.org/">The Andaman and Nicobar Islands: Centre for Island Ecology</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.apsccindia.org/">Association for Promoting Sustainability in Campuses and Communities</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.aripune.org">Ajrekar Mycological Herbarium (AMH)</a></td><td>Agharkar Herbarium</td><td>Western Ghats of Maharashtra and adjoining regions.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.atree.org/">Ashoka Trust for Research in Ecology and the Environment (ATREE)</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.buruniv.ac.in">University of Burdwan</a></td><td>Herbarium</td><td>Burdwan, Bihar, Decan Peninsula, and eastern Himalayas; freshwater algae of Bengal Plains.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.caluniv.ac.in ">Plant Chromosome Information Centre</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.cazri.res.in/apif">ICAR-Central Arid Zone Research Institute</a></td><td>Herbarium</td><td>Vascular plants of Indian arid zones.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.ceeedindia.com/index.html">Centre for Environment, Education and Economic Development (CEEED)</a></td><td></td><td>institutional website</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.chilika.com/">Natural Eco-Laboratory, Chilika Lake</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.cissa.co.in/">Centre for Innovation in Science and Social Action</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.cmpr-avs.com">Centre for Medicinal Plants Research</a></td><td>Herbarium</td><td>Collections include rare,medicinal plants, as well as  red-listed and endemic plants from Western Ghats, Eastern Ghats & Andaman and Nicobar Islands</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.crowindia.org/about.html">Conservation and Research in Ornithology and Wildlife</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.devagiricollege.org">St. Joseph's College</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.ebiodiversity.net/mammals/">Indian Biodiversity Information System- Mammals (IBIS-Mammals)</a></td><td>Mammal</td><td>data</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.envfor.nic.in">Botanical Survey of India</a></td><td>Herbarium</td><td>The herbarium collection essentially pertains to Andhra Pradesh and Orissa states in India. It has a separate Mangrove herbarium section with 900 specimens.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.frlht.org.in">Foundation for Revitalisation of Local Health Traditions</a></td><td>Herbarium</td><td>Medicinal plants of India.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.gauhati.ac.in">Gauhati University</a></td><td>Herbarium</td><td>Plants and fungi of Northeast India.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.grow-trees.com/">Grow-Trees</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.ibin.gov.in/">Indian Bio-resource Information Network (IBIN)</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.ihbt.res.in">Institute of Himalayan Bioresource Technology</a></td><td>Herbarium</td><td>Vascular plants of western Himalayan region, India.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.indiabiodiversity.org"> India Biodiversity Portal </a></td><td>All -  </td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.indianbiodiversity.org/">Indian Biodiversity Information System (IBIS)</a></td><td></td><td>database</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.kfriherbarium.org/">Kerala Forest Research Institute</a></td><td>Herbarium</td><td>Forests of Kerala and southern Western Ghats; <Dalbergia>, Fabaceae, of southern India; rattans and bamboos of India; Orchidaceae of Western Ghats; medicinal plants; epiphytes and lichens of Kerala.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.loris.in">LORIS-The Biodiversity Conservation Society</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.marthomacollege.org">Mar Thoma College</a></td><td>Herbarium</td><td>Vascular plants and fungi of southern India.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.ncbi.org.in/invasive/search/index.html"> Invasive Alien Species Database </a></td><td>Domain - Eukaryota </td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.neceer.org.in/">North East Centre for Environmental Education and Research</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.nehu.ac.in">North Eastern Hill University</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.nfindia.org/">Nature Foundation (India)</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.nieindia.org/">National Institute of Ecology (NIE)</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.pilikula.com">Dr. Shivaram Karantha  Pilikula Nisarga Dhama</a></td><td>Herbarium</td><td>Specialization in the flora of the Western Ghats.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.punjabiuniversity.ac.in">Punjabi University</a></td><td>Herbarium</td><td>Indian subcontinent, especially Himalayas and central and southern India; vascular plants; fungi; algae.</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.sankalptaru.org/">SankalpTaru Foundation</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.sbcollege.org/Herbarium.aspx">St. Berchmans College</a></td><td>Herbarium</td><td>Angiosperm specimens from Kerala, with some collection from other states of India; very few collections from outside India</td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.scity.org/">Gujarat Science City</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.terraconindia.com/">Terracon</a></td><td></td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.uasbangalore.edu.in/">University of Agricultural Sciences Bangalore</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.unipune.ac.in">Savitribai Phule Pune University</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>India</td><td><a target="_blank"  href="http://www.wii.gov.in">Wildlife Institute of India</a></td><td>NGO</td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://indobiosys.org/">Indonesian Biodiversity Discovery and Information System</a></td><td>All - Life </td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://phylodiversity.net/xmalesia/">A digital flora of Indonesia and Malesia</a></td><td>Flora</td><td>data</td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://sith.itb.ac.id">Institut Teknologi Bandung</a></td><td>Herbarium Bandungense</td><td>Indonesia, especially Java.</td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.biologi.lipi.go.id/bio_english/index.php">Research Center for BIOLOGY - Indonesian Institute of Sciences</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.ecolodgesindonesia.com/">Eco Lodges Indonesia</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.greenersmagz.com/">Greeners Indonesia</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.krbogor.lipi.go.id/id/isirow/isi_statis/58.html">Herbarium Kebun Raya Bogor, Indonesia</a></td><td>Herbarium</td><td>Herbarium</td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.lei.or.id/tentang-sertifikasi-lei">Lembaga Eko­la­bel Indonesia</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.nbin.lipi.go.id">Indonesian National Biodiversity Information Network (NBIN)</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.proseanet.org">Plant Resources of South East Asia Association</a></td><td>plant</td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.tamansafari.com/">Taman Safari Indonesia</a></td><td></td><td></td></tr>
+<tr><td>Indonesia</td><td><a target="_blank"  href="http://www.ypb.or.id/index.php?option=com_frontpage&Itemid=1">Yayasan Pembangunan Berkelanjutan(Foundation  for Sustainable Development )</a></td><td>Organization</td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://elmer.rbge.org.uk/Begonia/"> South East Asian Begonia database </a></td><td>Genus - Begonia </td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://members.tripod.com/asia_flora/">East Asian Flora Web</a></td><td>flora</td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://www.adb.org/Topics/default.asp">Asian Development Bank</a></td><td>Organization</td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://www.ansab.org/">Asia Network for Sustainable Agriculture and Bioresources</a></td><td></td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://www.escwa.un.org/">Economic and Social Commission for Western Asia</a></td><td>Organization</td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://www.rmportal.net/library/content/frame/natural-products-manual.pdf">Enterprise Development for Natural Products Manual (ANSAB- Asia Network for Sustainable Bioresources, and EWW- EnterpriseWorks Worldwide)</a></td><td>Manual</td><td></td></tr>
+<tr><td>Internationl-Asia</td><td><a target="_blank"  href="http://www.uvm.edu/albeetle"> Asian Longhorned Beetle </a></td><td>Species - Anoplophora glabripennis </td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://flora-iran.com/">Flora of Iran</a></td><td>Flora</td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://herbarium.kmu.ac.ir/">Kerman University of Medical Sciences</a></td><td>Herbarium Center</td><td>Medicinal plants of Kerman Province</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://https://herbarium.iau-garmsar.ac.ir">Islamic Azad University Garmsar</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://https://herbarium.mshdiau.ac.ir">Islamic Azad University of Mashhad</a></td><td>Herbarium</td><td>Iran, especially northern and northeastern part, including Mashhad and Khorasan.</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://ibrc.ir/index.aspx?fkeyid=&siteid=1&pageid=464&siteid=1">Iranian Biological Resource Center</a></td><td>Herbarium</td><td>Plants of Iran, especially vascular plants of two large families, Asteraceae (<Artemisia>) and Amaryllidaceae (<Allium>).</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://mpih.ir">Institute of Medicinal Plants, ACECR</a></td><td>Herbarium</td><td>Medicinal plants of Iran</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://ow.umz.ac.ir/en/">University of Mazandaran</a></td><td>Herbarium</td><td>Our main aim is to collect and determine all plants of Iran particularly those growing in the territory of the Hyrcanian area and surroundings</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.alzahra.ac.ir">Alzahra University</a></td><td></td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.doe.ir">Department of Environment Islamic Republic of  Iran</a></td><td>Herbarium</td><td>Plants of protected areas in IRAN</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://WWW.du.ac.ir">Damghan University</a></td><td>Herbarium</td><td>Vascular plants of Hyrcanian district and Irano-Turanian region.</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.efcsrttu.ir/">Environment Friends Club of Shahid Rajaei Teacher Training University</a></td><td></td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.flora-iran.com">Tehran University</a></td><td>Central Herbarium</td><td>Iran.</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.itmrc.org/herbarium.htm">Shahid Beheshti University of Medical Sciences</a></td><td>Herbarium</td><td>Medicinal plants.</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.myco-lich.ir/">Iranian Research Organization for Science and Technology (IROST)</a></td><td>Iranian Cryptogamic Herbarium</td><td>Iranian lichens and fungi</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.tirgan.ir/index.php">Tirgan Cultural and Sports Institute</a></td><td></td><td></td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.ui.ac.ir/">University of Isfahan</a></td><td>Herbarium</td><td>Flora of Iran</td></tr>
+<tr><td>Iran</td><td><a target="_blank"  href="http://www.wildlife.ir/">Iranian Cheetah Society (ICS)</a></td><td>NGO</td><td></td></tr>
+<tr><td>Iraq</td><td><a target="_blank"  href="http://kurdistanbotanical.org/kurdistanbotanical/?q=node/4">Kurdistan Botanical Foundation</a></td><td>Herbarium</td><td>Currently focus is  on poorly explored mountains for Kurdistan Iraq, including Hawraman, Azmer-Goizha, Pira Magrun, and Qara Dagh. Intensive fieldwork is carried continuously for at least eight months annually, and plans are underway to survey other important mountains in Kurdistan Iraq such as Qandil, Algurd, and others.</td></tr>
+<tr><td>Iraq</td><td><a target="_blank"  href="http://web.uod.ac/ac/c/coa/">University of Duhok</a></td><td>Duhok University Herbarium</td><td>Plants of Kurdistan</td></tr>
+<tr><td>Israel</td><td><a target="_blank"  href="http://bip.weizmann.ac.il/index.html">Bioinformatics and Biological Computing</a></td><td></td><td></td></tr>
+<tr><td>Israel</td><td><a target="_blank"  href="http://evolution.haifa.ac.il">University of Haifa</a></td><td>Herbarium</td><td>Mycobiota of Israel.</td></tr>
+<tr><td>Israel</td><td><a target="_blank"  href="http://www.bgu.ac.il/life/mizrahi.html">Yosef Mizrahi's Homepage.</a></td><td></td><td></td></tr>
+<tr><td>Israel</td><td><a target="_blank"  href="http://www.flowersinisrael.com/">Flowers in Israel</a></td><td>Plant</td><td></td></tr>
+<tr><td>Israel</td><td><a target="_blank"  href="http://www.parks.org.il/ParksENG/ganim_about.php3">Israel Nature and Parks Authority</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http:// herbariumdb.ffpri.affrc.go.jp/en">Tama Forest Science Garden, Forestry and Forest Products Research Institute</a></td><td>Herbarium</td><td>Japanese vascular plants, especially conifer and flowering cherries.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http:// www.shizenhaku.wakayama-c.ed.jp">Wakayama Prefectural Museum of Natural History</a></td><td>Herbarium</td><td>Vascular plants, especially Wakayama Prefecture.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://apasd-niaes.dc.affrc.go.jp"> Asia-Pacific Alien Species Database </a></td><td>Life - All invasive species </td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://cepajapan.org/">CEPA Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://hattorilab.org/en/">Hattori Botanical Laboratory</a></td><td>Herbarium</td><td>Worldwide bryophytes and lichens, with emphasis on Asia.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://herbariumdb.ffpri.affrc.go.jp/en">Forestry and Forest Products Research Institute</a></td><td>Herbarium</td><td>Japanese vascular plants, especially woody plants.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://hiroshima-ue.net/">UE-net</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://invasive.m-fuukei.jp/"> Invasive Plants Database (Japan) </a></td><td>Kingdom - Plantae </td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://japan.kantei.go.jp/index.html">Prime Minister of Japan and His Cabinet</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://jpnrdb.com/search.php?mode=rank">System of Japanese Red Data</a></td><td>all</td><td>red list</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://muses.muses.tottori-u.ac.jp/dept/FMRC/index.htm">Tottori University</a></td><td>Herbarium</td><td>Macrofungi of Japan</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://nh.kanagawa-museum.jp/info/indexen.html">Kanagawa Prefectural Museum of Natural History</a></td><td>Herbarium</td><td>Japan, especially Kanagawa Japan prefecture area (Hakone, Tanzawa, Kamakura, Yokohama, Yokosuka and  Atsugi etc.).</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://satoyamabasket.net/">General Incorporated Foundation mudef</a></td><td>Science Education</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://shigeko@kaum.kagoshima-u.ac.jp">Kagoshima University</a></td><td>Kagoshima University Museum</td><td>Vascular plants of Kagoshima Prefecture, including mainland and islands; vascular plants of southern Japan, from southern Kyushu to the Nansei Islands.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://tsm.toyama.toyama.jp">Toyama Science Museum</a></td><td>Herbarium</td><td>Toyama; vascular plants (84,000 specimens); mosses (6000 specimens).</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://wildflowersjp.blog37.fc2.com/">Wildflowers of Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.akita-c.ed.jp/~hakubutu/index.htm">Akita Prefectural Museum</a></td><td>Herbarium</td><td>Japan; Korea; Indonesia; Malaysia; all plant groups except fungi and algae; bryophytes of Japan.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.apn-gcr.org/">The Asia-Pacific Network for Global Change Research (APN)</a></td><td>Organization</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.basc.jp/">Biodiversity Agriculture Support Center (Seibutsutayousei Nougyou Shien Center)</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.bg.s.u-tokyo.ac.jp/common/research/murata-lab/murata.html">University of Tokyo</a></td><td>Herbarium</td><td>Vascular plants of Japan, Sakhalin and Kuril Islands, Russia, Korea, Taiwan, Himalayas, China, and Malaysia.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.bgtym.org/">Botanic Gardens of Toyama</a></td><td>Herbarium</td><td>Vascular plants of Japan</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.bio.nite.go.jp/nbrc/e-home/index-e.html">National Institute of Technology and Evaluation</a></td><td>Culture Collection Division</td><td>Fungi, mainly from Japan.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.biodic.go.jp">CHM National Focal Point</a></td><td></td><td>CHM</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.bunka.pref.mie.lg.jp/MieMu/">Mie Prefectural Museum</a></td><td>Mie Prefectural Museum</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.cbdnet.jp/">Japan Civil Network for the Convention on Biological Diversity</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.chiba-muse.or.jp/NATURAL/index.htm">Natural History Museum and Institute, Chiba</a></td><td>Herbarium</td><td>Chiba prefecture; Japan; Asia</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.city.nagoya.jp/global/en/">City of Nagoya - Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.ecotourism.gr.jp/">Japan Ecotourism Society</a></td><td>NGO</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.ecotourism-okinawa.jp/">Ecotourism Promoting Council of Okinawa</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.enecho.meti.go.jp/en/">Agency for Natural Resources and Energy</a></td><td></td><td></td></tr>
+<tr><td> Japan</td><td><a target="_blank"  href="http://www.hinoma.com/maps/">Flora of Hokkaido, Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.env.go.jp/en/">Ministry of Environment</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.epohok.jp/">EPO Hokkaido - Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.gbif.jp/v2/">GBIF Japan </a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.gmnh.pref.gunma.jp">Gunma Museum of Natural History</a></td><td>Herbarium</td><td>Plants of Gunma Prefecture, central Japan.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.greenbizjapan.com/">GreenBiz Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.h.chiba-u.jp/">Chiba University</a></td><td>Herbarium</td><td>Japan, especially Chiba-ken, Chiba prefecture</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.hokudai.ac.jp">Hokkaido University Botanic Garden</a></td><td>Herbarium</td><td>Plants of Hokkaido</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.icett.or.jp/">International Transfer Centre for Environmental Technology</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.ifap.org/">International Federation of Agricultural Producers</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.itto.or.jp/">International Tropical Timber Organization</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.iucn.jp/undb.html">Japan Committee for IUCN</a></td><td>NGO</td><td>red list</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.jbib.org/en">Japanese Business Initiative for Conservation and Sustainable Use of Biodiversity</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.jcnundb.org/">Japan Civil Network for the United Nations Decade on Biodiversity</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.jfa.maff.go.jp/">Ministry of Agriculture, Forestry and Fisheries</a></td><td>government department</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.jica.go.jp/english">The Japan International Cooperation Agency - Japan</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.kahaku.go.jp/english/">National Museum of Nature and Science, Japan</a></td><td>Herbarium</td><td>All plant groups worldwide; vascular plants mainly Japan.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.kankyoshimin.org/">Citizens Environmental Foundation (Kankyou Shimin)</a></td><td>Public Science</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.kiitcegs.org/">KIIT Centre for the Environment and Global Sustainability</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.makino.or.jp/makino/frame/f_science.html">Makino Botanical Garden</a></td><td>Herbarium</td><td>Vascular plants; Japan; eastern and tropical Asia.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.merryproject.com/">MERRY PROJECT</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.mlit.go.jp/en/index.html">Ministry of Land, Infrastructure, Transport and Tourism</a></td><td>government department</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.museum.comet.go.jp/e_museum.htm">Tokushima Prefectural Museum</a></td><td>Herbarium</td><td>Japan, especially Tokushima and Kochi prefectures.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.museum.hokudai.ac.jp">Hokkaido University Museum</a></td><td>Museum</td><td>Fungi of Japan and Kuril Islands, Russia; algae of Kuril Islands.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.mus-nh.city.osaka.jp/english/omnh-e-home.html">Osaka Museum of Natural History</a></td><td>Herbarium</td><td>Marine algae, bryophytes, and vascular plants (including wood samples, pollen, and spore slides) of Japan and adjacent regions.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.nacsj.or.jp/project/waytob/2011/index.html">Nature Conservation Society of Japan</a></td><td>NGO</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.narec.or.jp/">Association for Nature Restoration and Conservation, Japan</a></td><td>NGO</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.ne.jp/asahi/marine-biology/seaweeds/">Tropical Marine Plant Conservation Working Group</a></td><td>Marine Plant</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.nedo.go.jp/english/">NEDO (Japan) Global Environmental Technology Development</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.nies.go.jp/">National Institute for Environmental Studies</a></td><td>institute website</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.nig.ac.jp/">National Institute of Genetics, ROIS</a></td><td>institute website</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.npo-jefa.com/">Japan Eco-System Farming Association</a></td><td>NGO</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.num.nagoya-u.ac.jp/">Nagoya University</a></td><td>Herbarium</td><td>Japan, especially bryophytes.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.oprt.or.jp/">Organization for the Promotion of Responsible Tuna Fisheries</a></td><td>NGO</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.plants.cc.kochi-u.ac.jp/">Kochi University</a></td><td>Herbarium of Kochi University</td><td>Japanese bryophytes and lichens, especially Shikoku Island.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.pref.nagano.lg.jp/kanken/shisetsu/izuna/nac/index.html">Nagano Environmental Conservation Research Institute</a></td><td>Herbarium</td><td>Vascular plants and Sphagnaceae of Japan and  adjacent regions</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.pref.tottori.jp/museum/homepage.htm">Tottori Prefectural Museum</a></td><td>Herbarium</td><td>Regional flora of Tottori Prefecture and surrounding area, northwestern Honshu, Japan.</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.ringyou.or.jp/">Zenkoku Ringyou Kairyou Fukyuu Kyoukai</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.rite.or.jp/index_e.html">Research Institute of Innovative Technology for the Earth</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.tanada.or.jp/">Tanada Network</a></td><td></td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.wbsj.org/">Wild Bird Society of Japan</a></td><td>NGO</td><td>Bird</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.wrc.kyoto-u.ac.jp/en/">The Wildlife Research Center of Kyoto University</a></td><td>institute website</td><td></td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www.yamagata-museum.jp/">Yamagata Prefectural Museum</a></td><td>Herbarium</td><td>Vascular plants (92,000 specimens) and bryophytes (2,000 specimens) of Japan, mainly of Yamagata Prefecture</td></tr>
+<tr><td>Japan</td><td><a target="_blank"  href="http://www-gtiao.nies.go.jp">GTI Japan</a></td><td></td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://akademiyanauk.kz/en/index.html">National Academy of Sciences of the Republic of Kazakhstan</a></td><td>institute website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://iggc.kz/">Institute of General Genetics and Cytology</a></td><td>institute website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.botsad.kz/">Institute of Botany & Phytointroduction, Ministry of Education and Science, Republic of Kazakhstan</a></td><td>institute website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.gylymordasy.kz/rus/muzej/muzej-prirody/">Museum of Nature</a></td><td></td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.herbarium.kspi.kz">Kostanay State Pedagogical Institute</a></td><td>Herbarium</td><td>Plants and diatoms of Kazahkstan.</td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.imv.kz/">Institute of Microbiology and Virology</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.instzool.kz">Institute of Zoology</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.kazscinet.unesco.kz/">Kazakhstan Scientific Collaborative Network</a></td><td>institutional website</td><td></td></tr>
+<tr><td>Kazakhstan</td><td><a target="_blank"  href="http://www.sunkar-05.kz/aboutus/">SUNKAR HATCHERY FOR BIRDS OF PREY</a></td><td></td><td></td></tr>
+<tr><td>Kyrgyz</td><td><a target="_blank"  href="http://www.landuse-association.kg/">Kyrgyz Association of Forest and Land Users (KAFLU)</a></td><td>institute website</td><td></td></tr>
+<tr><td>Kyrgyz</td><td><a target="_blank"  href="http://www.naskr.kg/index.php/en/">National Academy of Science of the Kyrgyz Republic</a></td><td>institute website</td><td></td></tr>
+<tr><td>Laos</td><td><a target="_blank"  href="http://dps.plants.ox.ac.uk/bol/hnl">Conseil National des Sciences</a></td><td>Herbier National du Laos</td><td></td></tr>
+<tr><td>Laos</td><td><a target="_blank"  href="http://www.mekongwetlands.org/index.htm">MWBP & Biodiversity Conservation</a></td><td>网站暂不可用</td><td></td></tr>
+<tr><td>Laos</td><td><a target="_blank"  href="http://www.mrcmekong.org/">Mekong River Commission</a></td><td>NGO</td><td></td></tr>
+<tr><td>Lebanon</td><td><a target="_blank"  href="http://biodiversity.moe.gov.lb">National CHM</a></td><td></td><td></td></tr>
+<tr><td>Lebanon</td><td><a target="_blank"  href="http://webfaculty.aub.edu.lb/~webnhm/">American University of Beirut</a></td><td>Post-Herbarium</td><td>Eastern Mediterranean coastal states (southern Turkey, Syria, Lebanon, Palestine, and Sinai) and Jordan.</td></tr>
+<tr><td>Lebanon</td><td><a target="_blank"  href="http://www.moe.gov.lb">Ministry of Environment - Lebanon</a></td><td>government department</td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://agrolink.moa.my/">Ministry of Agriculture And Agro-Based Industry </a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://biology.um.edu.my/">Faculty of Science, Institute of Biological Sciences, University of Malaya</a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://birg1.fbb.utm.my/birgwebsite/">Bioinformatics Research Group, Biological Science Department, Faculty of Bioscience & Bioengineering</a></td><td></td><td>biodiversity informatics,molecular biology,GIS,Marine</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://malaysiabutterflies.myspecies.info/">Butterflies of Peninsular Malaysia </a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://museumzoology.um.edu.my/?modul=Museum_Home">Museum of Zoology, University of Malaya</a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://rimba.um.edu.my">University of Malaya</a></td><td>Herbarium</td><td>All groups with emphasis on Old World tropics, especially Malay Archipelago.</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://tracc-borneo.org">Tropical Research and Conservation Centre</a></td><td>Fisheries</td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.chm.frim.gov.my">Biological Diversity Clearing House Mechanism</a></td><td>government department</td><td>CHM</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.frim.gov.my/">Forest Research Institute Malaysia </a></td><td></td><td>plant</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.ibec.unimas.my/">Institute of Biodiversity and Environmental Conservation</a></td><td></td><td>All - Life </td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.jas.sains.my/ ">Department of Environment </a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.mtcc.com.my/">Malaysian Timber Certification Council (MTCC)</a></td><td></td><td>plant</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.nre.gov.my/en-my/Pages/default.aspx">Official Portal Ministry of Natural Resources and Environment (NRE)</a></td><td></td><td></td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.sabah.gov.my/htan_frc">Forest Research Centre in Sandakan</a></td><td>institute website</td><td>forest</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.sabahparks.org.my">Sabah Parks</a></td><td>Herbarium</td><td>Sabah;, especially montane areas; all plant groups.</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.teamnetwork.org/">Tropical Ecology Assessment and Monitoring Network</a></td><td>Project website</td><td>Forest</td></tr>
+<tr><td>Malaysia</td><td><a target="_blank"  href="http://www.tfbc.frim.gov.my">Forest Research Institute Malaysia</a></td><td>Herbarium</td><td>Malesia, especially Malaya and Borneo; Indo-China; vascular plants.</td></tr>
+<tr><td>Malaysia, UK</td><td><a target="_blank"  href="http://www.searrp.org/">The South East Asia Rainforest Research Partnership</a></td><td>institutional website</td><td>Forest</td></tr>
+<tr><td>Mongolia</td><td><a target="_blank"  href="http://mongolia.panda.org/en/">WWF Mongolia</a></td><td>institute website</td><td></td></tr>
+<tr><td>Mongolia</td><td><a target="_blank"  href="http://www.mos.mn">Mongolian Ornithological Society</a></td><td>NGO</td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://kist.edu.np/">Kathmandu Institute Of Science and Technology</a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://narc.gov.np/narc/index.php">Nepal Agricultural Research Council (NARC) </a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.floraofnepal.org">Flora of Nepal </a></td><td></td><td>plant</td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.forestrynepal.org/">Forestry Nepal-gateway to forestry information in Nepal</a></td><td>网站暂不可用</td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.iaas.edu.np/">Institute of Agriculture and Animal Science</a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.icimod.org/">International Centre for Integrated Mountain Development</a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.isernepal.org.np/">Institute for Social and Environmental Research-Nepal (ISER-N)</a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.kath.gov.np">National Herbarium and Plant Laboratories</a></td><td>Herbarium</td><td>plant</td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.moad.gov.np/">Ministry of Agricultural Development</a></td><td>government department</td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.nast.org.np/new/">Nepal Academy of Science and Technology (NAST)</a></td><td></td><td></td></tr>
+<tr><td>Nepal</td><td><a target="_blank"  href="http://www.ndri.org.np/">Nepal Development Research Institute (NDRI)</a></td><td></td><td></td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://bgarden.salu.edu.pk/">Centre for Biodiversity and Conservation (CBC), Shah Abdul Latif University, Khairpur</a></td><td></td><td>plant</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://herbarium.qau.edu.pk/">Quaid-I-Azam University</a></td><td>Herbarium of Pakistan</td><td>Mainly vascular plants of Pakistan, especially northern and northwestern Pakistan (Punjab, North-West Frontier Province, Baluchistan, Northern areas, and Azad Kashmir).  Pakistan including Gilgit-Baltistan, Salt Range, Galliyat, Deserts, Sindh, Baluchistan, AJK and Northern Himalayan areas.</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.aup.edu.pk/herbarium">Agriculture University</a></td><td>Agriculture University Herbarium</td><td>Plants of the Khyber Pakhtunkhwa area.</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.Hu.edu.pk">Hazara University</a></td><td>Herbarium</td><td>Higher vascular plants and archegoniates of Western Himalaya.</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.mobot.org/MOBOT/research/pakistan/">Inventory of the Plants of Pakistan</a></td><td></td><td></td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.must.edu.pk/sciences/Botany/index.html">Mirpur University of Science & Technology</a></td><td>University Herbarium</td><td>Plants (Bryohytes; Pteridophytes; Gymnosperms and Angiosperms) and fungi of Pakistan, especially vascular plants of the Shiwalik Range, Azad Kashmir.</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.newworldhope.org/">New World Hope Organization</a></td><td></td><td></td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://WWW.PMNH.GOV.PK">PAKISTAN MUSEUM OF NATURAL HISTORY Provider</a></td><td>museum</td><td>All - Life </td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.salu.edu.pk/botherbharden">Shah Abdul Latif University</a></td><td>Herbarium</td><td>Subtropical thorn forest and riverine forest (Indus).</td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.uom.edu.pk/departments/botany.php">University of Malakand</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>Pakistan</td><td><a target="_blank"  href="http://www.wildernesspakistan.org/">Wilderness Pakistan Trust</a></td><td>NGO</td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://chm.aseanbiodiversity.org/">Biodiversity Information Sharing Service (ASEAN Clearing House Mechanism)</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://paase.org/home.html">The Philippine-American Academy of Science & Engineering (PAASE)</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.arcbc.org.ph/">ASEAN Regional Centre for Biodiversity Conservation (ARCBC)</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.aseanbiodiversity.org/">ASEAN Centre for Biodiversity</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.biology.upd.edu.ph/">Institute of Biology, University of the Philippines Dilman</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.botolanwildlifefarm.com/">Botolan Wildlife Park</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.chm.ph/">National Clearing-House Mechanism - Philippines</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.fishbase.org"> Fishbase </a></td><td>Class - Actinopterygii, Cephalaspidomorphi, Elasmobranchii, Holocephali, Myxini, Sarcopterygii </td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.laguna.net/uplbmuseum">University of the Philippines Los Baños</a></td><td>Herbarium</td><td>Mt. Makiling of Luzon Island; Philippines; southeastern Asia; some New World.</td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.nast.ph/">The National Academy of Science and Technology (NAST)</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.nationalmuseum.gov.ph">National Museum</a></td><td>Philippine National Herbarium</td><td>Philippines; Malay Archipelago.</td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.pemsea.org/">Partnerships in Environmental Management for the Seas of East Asia</a></td><td>Organization</td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.philippineflora.info">Flora of the Philippines</a></td><td>Jose Vera Santos Memorial Herbarium</td><td>Philippines; angiosperms, especially Poaceae; Pacific and eastern Asian algae, fungi, and mosses.  6000 collections of Leonardo L. Co, ecological vouchers from Philippine forest inventories.</td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.philippineplants.org/">Co's Digital Flora of the Philippines</a></td><td></td><td></td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.pnh.com.ph/">Herbarium Digital Library</a></td><td>Herbarium</td><td>Herbarium</td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.uplb.edu.ph/fprdi/">Forest Products Research and Development Institute</a></td><td>Herbarium</td><td>Philippines.</td></tr>
+<tr><td>Philippines</td><td><a target="_blank"  href="http://www.usc.edu.ph/department/biology">University of San Carlos</a></td><td>Herbarium</td><td>Central and southern Philippines; all groups.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://lifescience.cheju.ac.kr">Jeju National University</a></td><td>Herbarium</td><td>Flora of Jeju Island, Korea</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.kmpc.kr, www.myalgae.org">Chungnam National University</a></td><td>Herbarium</td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://210.178.11.61/eng/">Korea National Arboretum</a></td><td>Herbarium</td><td>Temperate Asian vascular plants; large fungi; lichens</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://home.dju.ac.kr/biosci">Daejeon University</a></td><td>Herbarium</td><td>Far Eastern Asia, especially Korea; medicinal plants.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://plaza.snu.ac.kr/~arbor">Seoul National University</a></td><td>Herbarium</td><td>South Korea, Japan, central China, and Nepal.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://seedbank.pdrc.re.kr/seedbank/">Korea Research Institute of Bioscience and Biotechnology</a></td><td>Herbarium</td><td>Korea, including northeastern Asia.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.niast.go.kr">National Institute of Agricultural Science and Technology</a></td><td>Herbarium</td><td>All plant groups and fungi of South Korea.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://alienplant.nier.go.kr/eng/index.html">Alien Plants in Korea </a></td><td></td><td>plant</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://aqua.ajou.ac.kr">Korean Aquatic Plant Resources and Information Bank</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://bik.kribb.re.kr/">Korean Biodiversity Information Facility (KBIF)</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://cnu.naris.go.kr">Chungnam University Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://english.mafra.go.kr/main.jsp">Ministry of Agriculture, Food and Rural Affairs</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://ewha.naris.go.kr/v2_en/">Ewha Womans University Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://gfei.naris.go.kr/v2_en/">Gyeongsangnam-do forest environment Research Institute</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://gmbo.naris.go.kr/v2_en/">Kunsan Passage Bird Research Institute</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://gys.naris.go.kr/v2_en/">Gyeryonsan Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://hnu.naris.go.kr/v2_en/">Hannam University Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://jeju.naris.go.kr/v2_en/">Folklore and Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://jjha.naris.go.kr/v2_en/ns_search/novice.jsp">Halla Arboretum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://jnmf.nairs.go.kr/v2_en/">JEOLLANAMDO MARITIME & FISHERIES SCIENCE MUSEUM</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://kctc.kribb.re.kr/english/">KBRC (Korean Biological Resource Center) - KBIF Node</a></td><td></td><td>Biodiversity</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://kdr.kbif.re.kr">KBIF Data Repository</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://khu.naris.go.kr/v2_en/">Kyung Hee University Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://kiwe.naris.go.kr/v2_en/">Korea Institutie of Water and Enviroment</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://kvh.kopri.re.kr/main/main.php">Korea Polar Research Institute</a></td><td>Herbarium</td><td>Algae, lichens, mosses and plants from the Arctic and Antarctic.</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://mokpo.naris.go.kr/v2_en/">Mokpo Museum of Natural History</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://sdm.naris.go.kr/v2_en/">Seodaemun Museum of Natural History</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://wshn.naris.go.kr/v2_en/">Wooseokheon Natural History Museum</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.cbd-chm.go.kr/english">Republic of Korea National CHM</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.kacc.rda.go.kr/ KACC ">Korean Agricultural Culture Collection, National Institute of Agricultural Biotechnology</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.kisti.re.kr/english/">Korea Institute of Science and Technology Information</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.kobic.re.kr">Korean Bioinformation Center</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.me.go.kr/">Ministry of Environment - Republic of Korea</a></td><td></td><td></td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.naris.go.kr/v2_en/">Korea Natural History Research Information System</a></td><td></td><td>biodiversity</td></tr>
+<tr><td>Republic of Korea</td><td><a target="_blank"  href="http://www.nature.go.kr">Korea Biodiversity Information System</a></td><td></td><td>biodiversity</td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://2mn.org/engl/rdbrf_en.htm">RED DATA BOOK OF RUSSIA</a></td><td>网站暂不可用</td><td></td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://biodat.ru/db/rb/index.htm">Red data of Russia</a></td><td></td><td>red list</td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://biodat.ru/db/rb/rb.php?src=0&grp=3">Insects-Russia</a></td><td></td><td>Insect</td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://en.wikipedia.org/wiki/List_of_insects_in_the_Red_Data_Book_of_Russia">List of insects in the Red Data Book of Russia</a></td><td></td><td>Insect</td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://en.wikipedia.org/wiki/List_of_the_vascular_plants_in_the_Red_Data_Book_of_Russia">List of the vascular plants in the Red Data Book of Russia</a></td><td></td><td>plant</td></tr>
+<tr><td>Russia</td><td><a target="_blank"  href="http://https://www.binran.ru/en/">Komarov Botanical Institute of the Russian Academy of Sciences</a></td><td></td><td>Plant</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://herbaria.plants.ox.ac.uk/bol/sing">Singapore Herbarium Online</a></td><td>Herbarium</td><td>plant</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://https://www.sbg.org.sg/index.php?option=com_content&view=featured&Itemid=361">Singapore Botanic Gardens</a></td><td>botanic garden</td><td>plant</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://rmbr.nus.edu.sg">National University of Singapore</a></td><td>institute website</td><td></td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.apbionet.org/">Asia Pacific Bioinformatics Network</a></td><td></td><td>biodiversity</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.ava.gov.sg">Agri-Food & Veterinary Authority</a></td><td></td><td></td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.birdpark.com.sg/">Jurong Bird Park</a></td><td>park</td><td>bird</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.nightsafari.com.sg/ch/">Night Safari</a></td><td></td><td>animal</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.nparks.gov.sg/">National Parks Board - Singapore</a></td><td></td><td></td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.nsse.nie.edu.sg/">Natural Sciences and Science Education Academic Group,National Institute of education,Singapore</a></td><td></td><td></td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.sbg.org.sg/index.php">Singapore Botanic Gardens</a></td><td>Herbarium</td><td>Singapore, Peninsular Malaysia, Borneo, Indonesia, and New Guinea; also China and Indochina.</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.underwaterworld.com.sg/">Underwater World Singapore</a></td><td></td><td>Marine life</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.worldcities.com.sg/">World Cities Summit</a></td><td></td><td>sustainable city</td></tr>
+<tr><td>Singapore</td><td><a target="_blank"  href="http://www.zoo.com.sg/">Singapore Zoological Garden</a></td><td>garden</td><td>animal</td></tr>
+<tr><td>South Korea</td><td><a target="_blank"  href="http://herbarium.daegu.ac.kr">Daegu University</a></td><td>Herbarium</td><td>Mainly general collections form South Korea; Cambodian collections since 2010.</td></tr>
+<tr><td>South Korea</td><td><a target="_blank"  href="http://plant.gachon.ac.kr">Gachon University</a></td><td>Herbarium</td><td>The herbarium contains three  types of specimens (seed, DNA, extracts) including medicinal plants.  The majority of specimens collected from Korea peninsula</td></tr>
+<tr><td>South Korea</td><td><a target="_blank"  href="http://www.nibr.go.kr">National Institute of Biological Resources</a></td><td>Herbariun</td><td>Korea; vascular plants; algae. lichens</td></tr>
+<tr><td>South Korea</td><td><a target="_blank"  href="http://www2.kongju.ac.kr/bioedu/">Kongju National University</a></td><td>Herbarium</td><td>Flora of Korea, Monocotyledons (especially Liliaceae)</td></tr>
+<tr><td>Taiwan</td><td><a target="_blank"  href="http://agriculture8.npust.edu.tw/">National Pingtung University of Science and Technology</a></td><td>Herbarium</td><td>Mainly vascular plants of Taiwan.</td></tr>
+<tr><td>Taiwan</td><td><a target="_blank"  href="http://hast.sinica.edu.tw/">Academia Sinica</a></td><td>Herbarium</td><td>Mainly vascular plant flora of Taiwan and eastern Asia.</td></tr>
+<tr><td>Taiwan</td><td><a target="_blank"  href="http://tai.ntu.edu.tw/">National Taiwan University</a></td><td>Herbarium</td><td>Vascular plants worldwide, especially Taiwan, China, Hainan Island, Japan, Liukiu Islands, and Micronesia.</td></tr>
+<tr><td>Taiwan</td><td><a target="_blank"  href="http://taif.tfri.gov.tw/taif_ch/">Taiwan Forestry Research Institute</a></td><td>Herbarium</td><td>Vascular plants; Worldwide, mainly Taiwan.</td></tr>
+<tr><td>Taiwan</td><td><a target="_blank"  href="http://tesrieng.coa.gov.tw/view.php?catid=45">Endemic Species Research Institute</a></td><td>Herbarium</td><td>All plant groups, especially vascular plants of Taiwan and eastern Asia.</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://staff.ait.ac.th/~volker/"> Thailand Biology, Agriculture and Horticulture </a></td><td>All - Life </td><td></td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.biotec.or.th/bbh">National Science and Technology Development Agency</a></td><td>BIOTEC Bangkok Herbarium</td><td>Fungi of Thailand; Plant specimens from the biodiversity research plots established by the Lab for studies of ae 30-ha forest dynamics plot in Khao Yai National Park.</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.dmsc.moph.go.th">Medicinal Plants Research Institute</a></td><td>Herbarium</td><td>Medicinal plants and allies of Thailand; voucher specimens for experimental raw materials and some medicinal plants in Thai Herbal Pharmacopoeia.</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.dnp.go.th/botany">National Park, Wildlife and Plant Conservation Department</a></td><td>The Forest Herbarium</td><td>All plant groups; Thailand.</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.dnp.go.th/index_eng.asp">The Science and Technology Research Institute，Chiangmai University</a></td><td>science and technology</td><td></td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.dnp.go.th/parkreserve/nationalpark.asp?lg=2">Department of National Parks, Wildlife and Plant Conservation</a></td><td>Governmental organisation</td><td></td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.farangsgonewild.com/flora-of-thailand.html">Farangs Gone Wild</a></td><td>individual</td><td>plant</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.fungaldiversity.org">The Mushroom Research Foundation</a></td><td>NGO</td><td>Fungi</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.ist.cmu.ac.th/riseat/">Regional Information Service Centre for Southeast Asia on Appropriate Technology (RISE-AT)</a></td><td></td><td>All - Life </td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.lichen.ru.ac.th">Ramkhamhaeng University</a></td><td>institute website</td><td>Lichens of paleotropics, especially Thailand.</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.livingriversiam.org/">Living River Siam</a></td><td></td><td>Freshwater ecosystems</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.science.msu.ac.th/MSU_Science2/html/museum.html">Mahasarakham University</a></td><td>museum</td><td>Mushroom collections from northeastern Thailand; foliicolous lichens of Thailand;  corticolous lichens of northeastern Thailand</td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.seameo.org/">Southeast Asian Ministers of Education Organization</a></td><td>Organization</td><td></td></tr>
+<tr><td>Thailand</td><td><a target="_blank"  href="http://www.zoothailand.org/">Zoological Park Organization of Thailand</a></td><td></td><td></td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://acuh.artvin.edu.tr">Artvin Coruh University</a></td><td>Artvin Coruh University Herbaria</td><td>Plants of Artivn Province, Turkey.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://edtuherbarium.trakya.edu.tr/">Trakya Üniversitesi</a></td><td>Herbarium</td><td>Vascular plants, fungi and seed and fruit collections are mainly from  European Turkey, Trakya region and Balkans.  Collections of Turkish botanist B. Kasapligil, including some vascular plant, economic Botany specimens, fossil collections, wood and cone collections, are  from other countries such as Japan, Hong Kong, Singapore.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://erch.erciyes.edu.tr/AnaSayfa/Herbaryum">Erciyes University</a></td><td>Herbarium</td><td>Vascular plants of Central Anatolia</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://fened-b.web.nku.edu.tr/">Namik Kemal University</a></td><td>Herbarium</td><td>Most of the collection were gathered by the taxonomic revision of the grasses in Turkey during the past nine years.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://herb.comu.edu.tr">Çanakkale Onsekiz Mart University</a></td><td>Herbarium</td><td>Vascular plant flora of Turkey, especially western and eastern Turkey; mosses of Turkey and worldwide</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://herbaryum.selcuk.edu.tr">Selçuk Üniversitesi</a></td><td>Konya Herbarium</td><td>Turkey, especially central Anatolia; all groups.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://iste.istanbul.edu.tr/en/">University of Istanbul</a></td><td>Herbarium</td><td>Vascular plants, mainly from Turkey, especially <Allium, Asphodeline, Asphodelus, Centaurea, Eryngium, Ferula, Ferulago, Papaver, Pimpinella, Rosa,> and <Salvia>; ethnobotanical collection.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://sci.ege.edu.tr/~botanik/bahce.html">Ege University</a></td><td>Herbaryum</td><td>Western Anatolia; aquatic plants of Turkey; Aegean coastal algae; Gökçeada Island (Imbroz).</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://www.aari.gov.tr">Aegean Agricultural Research Institute</a></td><td>Herbarium</td><td>Turkey, eastern Mediterranean, Irano-Turanian, and Euro-Siberian regions; wild relatives of crop species.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://www.anadolu.edu.tr">Anadolu University</a></td><td>Herbarium</td><td>Turkey, especially Eskisehir, Anatolia, and Thrace.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://www.herb.gazi.edu.tr">Gazi Üniversitesi</a></td><td>Herbaryumu</td><td>Turkey.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://www.hun.edu.tr">Hacettepe Üniversitesi</a></td><td>Herbaryumu</td><td>Turkey.</td></tr>
+<tr><td>Turkey</td><td><a target="_blank"  href="http://www.yyu.edu.tr">Yüzüncü Yil University</a></td><td>Herbarium</td><td>Turkey, especially eastern and southeastern Anatolia.</td></tr>
+<tr><td>United Arab Emirates</td><td><a target="_blank"  href="http://https://www.ead.ae/arabic/SitePages/Home.aspx">Environment Agency- Abu Dhabi</a></td><td>Herbarium-Environment Agency, Abu Dhabi</td><td></td></tr>
+<tr><td>Uzbekistan</td><td><a target="_blank"  href="http://www.academy.uz/en">Academy of Sciences of the Republic of Uzbekistan</a></td><td>institute website</td><td>institute website</td></tr>
+<tr><td>Vietnam</td><td><a target="_blank"  href="http://http//:www.vnfm.vn">Forest Inventory and Planning Institute</a></td><td>Herbarium</td><td>All plants and fungi of Vietnam</td></tr>
+<tr><td>Vietnam</td><td><a target="_blank"  href="http://vnmn.ac.vn/">Vietnam National Museum of Nature</a></td><td>museum</td><td>biodiversity</td></tr>
+<tr><td>Vietnam</td><td><a target="_blank"  href="http://www.dlu.edu.vn/">Da Lat University</a></td><td>institute website</td><td>Plants of Vietnam, especially from the Plateau of Vietnam</td></tr>
+<tr><td>Vietnam</td><td><a target="_blank"  href="http://www.ecobambou-phuan.org/">Research Center for the Conservation of Natural Resources (University) and Phu An Botanic Gardens</a></td><td>Phu An Herbarium</td><td>The herbarium focused on old-world bamboos, associated with a live bamboo collection.</td></tr>
+<tr><td>China</td><td><a target="_blank"  href="http://https://db.cngb.org/">China National GeneBank DataBase</a></td><td>database</td><td>genomic, China, database</td></tr>
+
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Country/Area</th>
+							<th>title</th>
+							<th>Type</th>
+							<th>Keywords</th>
+						</tr>
+			 
+</body>
+</html>

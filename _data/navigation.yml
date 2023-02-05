@@ -1,0 +1,88 @@
+# Links listed below will be included in your site's navbar (navigation at the top)
+
+- text: About
+  menu: # Dropdown menu (one level deep only)
+  - text: Introduction of AsiaBIF
+    href: /about
+  - text: Working group
+    href: /AboutGroup
+  - text: Contact us
+    href: /Contact us/
+  - text: AsiaBIF websites
+    href: /AsiaBIF websites/
+- text: Data by Region
+  menu: # Dropdown menu (one level deep only)
+  - text: Asia
+    href: /data
+  - text: Central Asia
+    href: /data?country=KZ&country=KG&country=TJ&country=TM&country=UZ
+  - text: Southeast Asia
+    href: /data?country=BN&country=KH&country=ID&country=LA&country=MY&country=MM&country=PH&country=SG&country=TH&country=VN
+  - text: South Asia
+    href: /data?country=AF&country=BD&country=BT&country=IN&country=LK&country=MV&country=NP&country=PK
+  - text: Northeast Asia
+    href: /data?country=CN&country=JP&country=MN&country=KP
+  - text: Southwest Asia
+    href: /data?country=TR&country=IR&country=AZ&country=GE&country=IQ&country=AM&country=SY&country=IL&country=YE&country=JO&country=PS&country=LB&country=SA&country=CY&country=OM&country=AE&country=KW&country=BH&country=QA
+  - text: North Asia
+    href: /data?country=RU
+- text: Data by Taxonomy
+  menu: # Dropdown menu (one level deep only)
+  - text: Plants:Bryophyta
+    href: /data?taxonKey=35
+  - text: Plants:Pteridophyta
+    href: /data?taxonKey=6027660
+  - text: Plants:Tracheophyta
+    href: /data?taxonKey=7707728
+  - text: Plants:Marchantiophyta
+    href: /data?taxonKey=9
+  - text: Plants:Rhodophyta
+    href: /data?taxonKey=106
+  - text: Animals:Reptilia
+    href: /data?taxonKey=358
+  - text: Animals:Amphibia
+    href: /data?taxonKey=131
+  - text: Animals:Mammalia
+    href: /data?taxonKey=359
+  - text: Animals:Aves
+    href: /data?taxonKey=212
+  - text: Animals:Chordata
+    href: /data?taxonKey=44
+# Plants-2, animal-4
+- text: Data by Type
+  menu: # Dropdown menu (one level deep only)
+  - text: Observation
+    href: /data?basisOfRecord=OBSERVATION
+  - text: Machine Observation
+    href: /data?basisOfRecord=MACHINE_OBSERVATION
+  - text: Human Observation
+    href: /data?basisOfRecord=HUMAN_OBSERVATION
+  - text: Materical Sample
+    href: /data?basisOfRecord=MATERIAL_SAMPLE
+  - text: Materical Citation
+    href: /data?basisOfRecord=MATERIAL_CITATION
+  - text: Preserved Specimen
+    href: /data?basisOfRecord=PRESERVED_SPECIMEN
+  - text: Fossil Specimen
+    href: /data?basisOfRecord=FOSSIL_SPECIMEN
+  - text: Living Specimen
+    href: /data?basisOfRecord=LIVING_SPECIMEN
+  - text: Occurrence
+    href: /data?basisOfRecord=OCCURRENCE
+- text: Checklist
+  href: /Checklist/
+- text: Documents
+  menu: # Dropdown menu (one level deep only)
+  - text: PPTs
+    href: /PPTs/
+  - text: Literatures
+    href: /Literature/
+#  - text: Videos
+#    href: https://hp-base-theme.gbif-staging.org/
+#  - text: Files
+#   href: /test/1.htm/
+- text: News
+  href: /news/
+#  - text: "---" # Divider to separate blocks of menu items (at least 3 "-")
+#  - text: "Files" # Title for block of menu items
+  
